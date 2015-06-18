@@ -1,0 +1,17 @@
+[
+    {
+        "in": ["style.css"],
+        "out": "pleeease/style.css",
+        "browsers": ["last 3 versions", "Android 2.3"]
+    },
+    {
+        "in": ["media.css"],
+        "out": "pleeease/media.css",
+        "browsers": ["last 3 versions", "Android 2.3"]
+    },
+    {
+        "in": ["ie8.css"],
+        "out": "pleeease/ie8.css",
+        "browsers": ["last 4 versions", "Android 2.3"]
+    }
+]

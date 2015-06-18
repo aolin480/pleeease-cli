@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+var fs       = require('fs');
+var extend   = require('deep-extend');
+//var util = require('util');
 
 var CLI      = require('../lib/cli');
 
@@ -10,4 +13,31 @@ program.
 var inputs = program.args;
 var output = program.to;
 
-var cli = new CLI(inputs, output).compile();
+
+var extendConfig = function (opts) {
+
+  opts = opts || {};
+
+  // read pleeeaserc
+  var config = {};
+  try {
+    var configFile = '.pleeeaserc';
+    config = JSON.parse(fs.readFileSync(configFile, 'utf-8'));
+  } finally {
+    return extend(opts, config);
+  }
+
+};
+
+var opts = extendConfig();
+var styleCount = Object.keys(opts).length;
+
+if( styleCount > 1 ){
+    for(var e = 0; e < styleCount; e++){
+        inputs = opts[e].in;
+        output = opts[e].out;
+        var cli = new CLI(inputs, output).compile();
+    }
+}else{
+    var cli = new CLI(inputs, output).compile();
+}

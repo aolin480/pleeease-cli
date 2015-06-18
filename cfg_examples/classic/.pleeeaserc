@@ -1,0 +1,17 @@
+[
+    {
+        "in": ["style.css"],
+        "out": "pleeease/style.css",
+        "browsers": ["last 3 versions", "Android 2.3"]
+    },
+    {
+        "in": ["media.css"],
+        "out": "pleeease/media.css",
+        "browsers": ["last 3 versions", "Android 2.3"]
+    },
+    {
+        "in": ["bacon.css"],
+        "out": "pleeease/bacon.css",
+        "browsers": ["last 3 versions", "Android 2.3"]
+    }
+]
